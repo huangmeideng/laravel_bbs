@@ -18,7 +18,7 @@
 //基础跟路由
 Route::get('/','PagesController@root')->name('root');
 
-//用户路由
+//登录注册路由
 //Auth::routes();等于一下路由配置
 // Authentication Routes...
 Route::get('login', 'Auth\LoginController@showLoginForm')->name('login');
@@ -34,3 +34,6 @@ Route::get('password/reset', 'Auth\ForgotPasswordController@showLinkRequestForm'
 Route::post('password/email', 'Auth\ForgotPasswordController@sendResetLinkEmail')->name('password.email');
 Route::get('password/reset/{token}', 'Auth\ResetPasswordController@showResetForm')->name('password.reset');
 Route::post('password/reset', 'Auth\ResetPasswordController@reset');
+
+//用户路由
+Route::resource('users','UsersController',['only'=>['show','update','edit']]);
