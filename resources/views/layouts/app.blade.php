@@ -8,6 +8,7 @@
     <!-- CSRF TOKEN -->
     <meta name="csrf-token" content="{{ csrf_token() }}">
     <title>@yield('title','LaravelBBS')-一个基于LARAVEL的BBS</title>
+    <meta name="description" content="@yield('description', '一个基于LARAVEL的BBS')" />
     <!-- Styles -->
     <link rel="stylesheet" href="{{ asset('css/app.css') }}">
     @yield('styles')
